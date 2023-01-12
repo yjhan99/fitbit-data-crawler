@@ -7,7 +7,6 @@ import urllib.parse as url_parser
 import base64
 import requests
 import time
-from typing import Tuple
 from datetime import datetime
 
 
@@ -135,7 +134,7 @@ class FitbitDataRetriever:
                f'scope=activity%20heartrate%20profile%20sleep'
 
     def _update_auth_token(self, auth_code: str):
-        _log(f'_update_auth_token(callback={auth_code})')
+        _log(f'_update_auth_token(auth_code={auth_code})')
 
         id_and_secret = f'{self._client_id}:{self._client_secret}'.encode()
         auth_header = base64.encodebytes(id_and_secret).decode('utf-8').strip()
@@ -226,8 +225,7 @@ class FitbitDataRetriever:
         url = f'https://api.fitbit.com/1/user/{user_id}/{self._RESOURCE_HEART_INTRA}/date/{date}/1d/1sec.json'
         return self._get_data(url=url)
 
-    def _get_sleep_data(self, user_id: str, date: str, resource: str) -> \
-            Tuple[str, str, dict]:
+    def _get_sleep_data(self, user_id: str, date: str, resource: str) -> dict:
         url = f'https://api.fitbit.com/1.2/user/{user_id}/{resource}/date/{date}.json'
         return self._get_data(url=url)
 
@@ -268,6 +266,11 @@ class FitbitDataRetriever:
         result['activityCalories'] = _get_simple_value(
             min_activity_calories, 'activities-tracker-activityCalories'
         )
+
+        sleep = self._get_sleep_data(
+            user_id, date, self._RESOURCE_SLEEP
+        )
+        result['sleep'] = _get_sleep_value(sleep, 'summary')
 
         if self._flag_intraday:
             intra_calories = self._get_intra_day_activity_data(
