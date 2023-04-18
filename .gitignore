@@ -1,3 +1,11 @@
+# Data
+data_monitoring/data_sample
+data_download/data_sample
+
+# chromedriver and DS_Store
+chromedriver
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
