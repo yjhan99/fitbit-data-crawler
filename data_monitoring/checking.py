@@ -28,7 +28,7 @@ for account in account_list:
     elif len(intra_heart) > 0:
         intra_heart_list.append('Little')
     else:
-        sleep_list.append('None')
+        intra_heart_list.append('None')
 
 DATA_QUALITY['sleep'] = sleep_list
 DATA_QUALITY['intra_heart'] = intra_heart_list
