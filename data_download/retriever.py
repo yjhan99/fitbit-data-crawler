@@ -315,8 +315,11 @@ class FitbitDataRetriever:
         option = webdriver.ChromeOptions()
         option.add_argument("--incognito")
         option.add_argument("headless")
+        print('start authorize')
+        print(self._selenium_path)
 
         with webdriver.Chrome(self._selenium_path, options=option) as browser:
+            print('start webdriver')
             browser.implicitly_wait(10)
             browser.get(self.auth_url)
 
@@ -338,6 +341,7 @@ class FitbitDataRetriever:
             self._update_auth_token(auth_code=auth_code)
 
     def retrieve(self, date: str):
+        print('start retrieve')
         self._authorize()
 
         result = self._get_all_data(

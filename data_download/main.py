@@ -18,7 +18,7 @@ _ACCOUNTS = {'yjhan99@kaist.ac.kr':'soend1d2d3!'}
 '''
 A path for selenium chrome driver
 '''
-_SELENIUM_PATH = 'chromedriver'
+_SELENIUM_PATH = './chromedriver'
 
 '''
 Client ID of your OAuth2 webapp
@@ -64,7 +64,7 @@ _END_DATE = '2023-04-02'
 '''
 The path that data are stored.
 '''
-_PATH_DATA = 'data_download/data_sample'
+_PATH_DATA = './data_download/data_sample'
 
 '''
 The number of parallel workers for getting data.
@@ -79,11 +79,12 @@ def _run(
        _end_date: str,
        _path: str
 ):
-   datetime_start = datetime.strptime(_start_date, '%Y-%m-%d')
-   datetime_end = datetime.strptime(_end_date, '%Y-%m-%d')
-   n_days = (datetime_end - datetime_start).days + 1
+    datetime_start = datetime.strptime(_start_date, '%Y-%m-%d')
+    datetime_end = datetime.strptime(_end_date, '%Y-%m-%d')
+    n_days = (datetime_end - datetime_start).days + 1
+    print('start run')
 
-   for t in range(n_days):
+    for t in range(n_days):
        date = datetime_start + timedelta(days=t)
        str_date = date.strftime("%Y-%m-%d")
 
@@ -101,6 +102,7 @@ if __name__ == '__main__':
    executor = ThreadPoolExecutor(max_workers=_N_WORKERS)
 
    for uid, pw in _ACCOUNTS.items():
+       print('start main')
        retriever = FitbitDataRetriever(
            selenium_path=_SELENIUM_PATH,
            client_id=_CLIENT_ID,
@@ -118,5 +120,5 @@ if __name__ == '__main__':
            import traceback
            print(f'[MAIN] Error occurred in {uid}/{pw}. Caused by:')
            traceback.print_exc()
-
+           
            executor.shutdown(True)

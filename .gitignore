@@ -1,5 +1,6 @@
 # Data
 data_monitoring/data_sample
+data_monitoring/data_quality
 data_download/data_sample
 
 # chromedriver and DS_Store

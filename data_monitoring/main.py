@@ -13,12 +13,12 @@ Users' account information, in which
 a key is an email address and a value is a password.
 '''
 # _ACCOUNTS = dict(uid='yjhan99@kaist.ac.kr', pw='soend1d2d3!')
-_ACCOUNTS = {'yjhan99@kaist.ac.kr':'soend1d2d3!'}
+_ACCOUNTS = {'iitp.inthewild.p01@gmail.com':'iitpinthewildp01'}
 
 '''
 A path for selenium chrome driver
 '''
-_SELENIUM_PATH = 'chromedriver'
+_SELENIUM_PATH = './chromedriver'
 
 '''
 Client ID of your OAuth2 webapp
@@ -53,18 +53,18 @@ _FLAG_INTRADAY = True
 The first date that you want to get data. 
 It needs to be formatted as "YYYY-MM-DD"
 '''
-_START_DATE = '2023-03-28'
+_START_DATE = '2023-04-26'
 
 '''
 The last date that you want to get data. 
 It needs to be formatted as "YYYY-MM-DD"
 '''
-_END_DATE = '2023-03-29'
+_END_DATE = '2023-04-26'
 
 '''
 The path that data are stored.
 '''
-_PATH_DATA = 'data_monitoring/data_sample'
+_PATH_DATA = './data_monitoring/data_sample'
 
 '''
 The number of parallel workers for getting data.
@@ -118,5 +118,4 @@ if __name__ == '__main__':
            import traceback
            print(f'[MAIN] Error occurred in {uid}/{pw}. Caused by:')
            traceback.print_exc()
-           
            executor.shutdown(True)

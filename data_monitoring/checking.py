@@ -3,8 +3,8 @@ import pandas as pd
 
 file_path = './data_monitoring/data_sample/'
 
-account_list = ['yjhan99@kaist.ac.kr']
-date = '2023-03-30'
+account_list = ['iitp.inthewild.p01@gmail.com']
+date = '2023-04-26'
 
 DATA_QUALITY = pd.DataFrame(columns=['account','sleep','intra_heart'])
 DATA_QUALITY['account'] = account_list
