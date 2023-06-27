@@ -13,7 +13,31 @@ Users' account information, in which
 a key is an email address and a value is a password.
 '''
 # _ACCOUNTS = dict(uid='yjhan99@kaist.ac.kr', pw='soend1d2d3!')
-_ACCOUNTS = {'iitp.inthewild.p01@gmail.com':'iitpinthewildp01'}
+_ACCOUNTS = {
+    'iitp.inthewild.p01@kse.kaist.ac.kr':'ZUr2Cd.GQ',
+    'iitp.inthewild.p02@kse.kaist.ac.kr':'eEh{Q8Pp@',
+    'iitp.inthewild.p03@kse.kaist.ac.kr':'zF?v_3#q6',
+    'iitp.inthewild.p04@kse.kaist.ac.kr':'e%H&#(5vn',
+    'iitp.inthewild.p05@kse.kaist.ac.kr':'gyj3.EfNC',
+    'iitp.inthewild.p06@kse.kaist.ac.kr':'Tzky4K?g8',
+    'iitp.inthewild.p07@kse.kaist.ac.kr':'eJxNB94-G',
+    'iitp.inthewild.p08@kse.kaist.ac.kr':'cZ&5[Mf@j',
+    'iitp.inthewild.p09@kse.kaist.ac.kr':'WE47_5Mm@',
+    'iitp.inthewild.p10@kse.kaist.ac.kr':'k"Af5Lc2W',
+    'iitp.inthewild.p11@kse.kaist.ac.kr':'etc@~4T(q',
+    'iitp.inthewild.p12@kse.kaist.ac.kr':'m6M9^s4TK',
+    'iitp.inthewild.p13@kse.kaist.ac.kr':'Nv6E!fKeC',
+    'iitp.inthewild.p14@kse.kaist.ac.kr':'Df5HP!RcG',
+    'iitp.inthewild.p15@kse.kaist.ac.kr':'W$V4c(T%L',
+    'iitp.inthewild.p16@kse.kaist.ac.kr':'tMx&r~F3N',
+    'iitp.inthewild.p17@kse.kaist.ac.kr':'j%wz6S&8q',
+    'iitp.inthewild.p18@kse.kaist.ac.kr':'GBuUt4a@3',
+    'iitp.inthewild.p19@kse.kaist.ac.kr':'SfKV4&Ge2',
+    'iitp.inthewild.p20@kse.kaist.ac.kr':'C;^3ycgB8',
+    'iitp.inthewild.p21@kse.kaist.ac.kr':'P5w9L@m%c',
+    'iitp.inthewild.p22@kse.kaist.ac.kr':'m;A2b4Jg[',
+    'iitp.inthewild.p23@kse.kaist.ac.kr':'L6-he@HWn'
+    }
 
 '''
 A path for selenium chrome driver
@@ -24,13 +48,11 @@ _SELENIUM_PATH = './chromedriver'
 Client ID of your OAuth2 webapp
 '''
 _CLIENT_ID = '23QVYH'
-# _CLIENT_ID = '238XR2'
 
 '''
 Client secret of your OAuth2 webapp
 '''
 _CLIENT_SECRET = 'bf9e7579bc65903ff979db9d18e204f3'
-# _CLIENT_SECRET = 'ecb1e3d98f95392f78a6953bace60d45'
 
 '''
 Callback URL of your OAuth2 webapp
@@ -53,13 +75,13 @@ _FLAG_INTRADAY = True
 The first date that you want to get data. 
 It needs to be formatted as "YYYY-MM-DD"
 '''
-_START_DATE = '2023-04-26'
+_START_DATE = '2023-06-22'
 
 '''
 The last date that you want to get data. 
 It needs to be formatted as "YYYY-MM-DD"
 '''
-_END_DATE = '2023-04-26'
+_END_DATE = '2023-06-25'
 
 '''
 The path that data are stored.
@@ -118,4 +140,5 @@ if __name__ == '__main__':
            import traceback
            print(f'[MAIN] Error occurred in {uid}/{pw}. Caused by:')
            traceback.print_exc()
-           executor.shutdown(True)
+
+executor.shutdown(True)
