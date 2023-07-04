@@ -1,9 +1,14 @@
 # Data
+data_download/data_sample
 data_monitoring/data_sample
 data_monitoring/data_quality1
 data_monitoring/data_quality2
-data_download/data_sample
 data_monitoring/workingHourData
+data_monitoring/noteFolder
+
+# # Note
+# note.py
+# visualize.ipynb
 
 # chromedriver and DS_Store
 chromedriver

@@ -28,7 +28,7 @@ account_list = ['iitp.inthewild.p01@kse.kaist.ac.kr',
                 'iitp.inthewild.p23@kse.kaist.ac.kr'
                 ]
 
-date = '2023-07-03'
+date = '2023-07-02'
 
 DATA_QUALITY = pd.DataFrame(columns=['account','sleep','intra_heart'])
 DATA_QUALITY['account'] = account_list
@@ -44,23 +44,20 @@ for account in account_list:
             data = json.load(file)
 
     except FileNotFoundError:
-        sleep_list.append('No')
-        intra_heart_list.append('Less than 12hr')
+        sleep_list.append(0)
+        intra_heart_list.append(0)
     
     else:
         sleep = data['sleep']
         if len(sleep) != 0: # 수면시 착용 여부 확인
-            sleep_list.append('Yes')
+            sleep_list.append(1)
         else:
-            sleep_list.append('No')
+            sleep_list.append(0)
 
         intra_heart = data['heart-intraday']
-        if len(intra_heart) > 48: # 12시간 이상 착용 여부 확인
-            intra_heart_list.append('More than 12hr')
-        else:
-            intra_heart_list.append('Less than 12hr')
+        intra_heart_list.append(len(intra_heart)*15/60)
 
 DATA_QUALITY['sleep'] = sleep_list
 DATA_QUALITY['intra_heart'] = intra_heart_list
 
-DATA_QUALITY.to_csv('./data_monitoring/data_quality2/data_quality2_' + date + '.csv')
+DATA_QUALITY.to_csv('./data_monitoring/noteFolder/note_' + date + '.csv')

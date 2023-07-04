@@ -14,10 +14,10 @@ a key is an email address and a value is a password.
 '''
 # _ACCOUNTS = dict(uid='yjhan99@kaist.ac.kr', pw='soend1d2d3!')
 _ACCOUNTS = {
-    'iitp.inthewild.p01@kse.kaist.ac.kr':'ZUr2Cd.GQ',
+    # 'iitp.inthewild.p01@kse.kaist.ac.kr':'ZUr2Cd.GQ',
     'iitp.inthewild.p02@kse.kaist.ac.kr':'eEh{Q8Pp@',
-    'iitp.inthewild.p03@kse.kaist.ac.kr':'zF?v_3#q6',
-    'iitp.inthewild.p04@kse.kaist.ac.kr':'e%H&#(5vn',
+    # 'iitp.inthewild.p03@kse.kaist.ac.kr':'zF?v_3#q6',
+    # 'iitp.inthewild.p04@kse.kaist.ac.kr':'e%H&#(5vn',
     'iitp.inthewild.p05@kse.kaist.ac.kr':'gyj3.EfNC',
     'iitp.inthewild.p06@kse.kaist.ac.kr':'Tzky4K?g8',
     'iitp.inthewild.p07@kse.kaist.ac.kr':'eJxNB94-G',
@@ -26,9 +26,9 @@ _ACCOUNTS = {
     'iitp.inthewild.p10@kse.kaist.ac.kr':'k"Af5Lc2W',
     'iitp.inthewild.p11@kse.kaist.ac.kr':'etc@~4T(q',
     'iitp.inthewild.p12@kse.kaist.ac.kr':'m6M9^s4TK',
-    'iitp.inthewild.p13@kse.kaist.ac.kr':'Nv6E!fKeC',
-    'iitp.inthewild.p14@kse.kaist.ac.kr':'Df5HP!RcG',
-    'iitp.inthewild.p15@kse.kaist.ac.kr':'W$V4c(T%L',
+    # 'iitp.inthewild.p13@kse.kaist.ac.kr':'Nv6E!fKeC',
+    # 'iitp.inthewild.p14@kse.kaist.ac.kr':'Df5HP!RcG',
+    # 'iitp.inthewild.p15@kse.kaist.ac.kr':'W$V4c(T%L',
     'iitp.inthewild.p16@kse.kaist.ac.kr':'tMx&r~F3N',
     'iitp.inthewild.p17@kse.kaist.ac.kr':'j%wz6S&8q',
     'iitp.inthewild.p18@kse.kaist.ac.kr':'GBuUt4a@3',
@@ -75,18 +75,18 @@ _FLAG_INTRADAY = True
 The first date that you want to get data. 
 It needs to be formatted as "YYYY-MM-DD"
 '''
-_START_DATE = '2023-06-22'
+_START_DATE = '2023-07-01'
 
 '''
 The last date that you want to get data. 
 It needs to be formatted as "YYYY-MM-DD"
 '''
-_END_DATE = '2023-06-25'
+_END_DATE = '2023-07-01'
 
 '''
 The path that data are stored.
 '''
-_PATH_DATA = './data_monitoring/data_sample'
+_PATH_DATA = './data_monitoring/data_sample/' + _START_DATE
 
 '''
 The number of parallel workers for getting data.
