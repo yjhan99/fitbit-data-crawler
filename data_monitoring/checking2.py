@@ -1,8 +1,6 @@
 import json
 import pandas as pd
 
-file_path = './data_monitoring/data_sample/'
-
 account_list = ['iitp.inthewild.p01@kse.kaist.ac.kr',
                 'iitp.inthewild.p02@kse.kaist.ac.kr',
                 'iitp.inthewild.p03@kse.kaist.ac.kr',
@@ -29,6 +27,8 @@ account_list = ['iitp.inthewild.p01@kse.kaist.ac.kr',
                 ]
 
 date = '2023-07-03'
+
+file_path = './data_monitoring/data_sample/' + date + '/'
 
 DATA_QUALITY = pd.DataFrame(columns=['account','sleep','intra_heart'])
 DATA_QUALITY['account'] = account_list

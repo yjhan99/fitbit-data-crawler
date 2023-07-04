@@ -2,9 +2,8 @@ import json
 import pandas as pd
 from datetime import datetime, time
 
-file_path = './data_monitoring/data_sample/'
-
 date = '2023-06-25'
+file_path = './data_monitoring/data_sample/' + date + '/'
 
 # account_list = ['iitp.inthewild.p01@kse.kaist.ac.kr',
 #                 'iitp.inthewild.p02@kse.kaist.ac.kr',
